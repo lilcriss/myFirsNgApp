@@ -1,0 +1,84 @@
+<p>Home works!</p>
+
+<p>Lorem Ipsum do u wanna eat it</p>
+
+<p><img [src]=" './assets/images/'+ sourceImage " width="" class="img-fluid" alt="" (click)="console(sourceImage)"></p>
+
+<p><img [src]=" './assets/images/'+ jsonImages[randomIndex].url " width="" class="img-fluid" [alt]="jsonImages[randomIndex].title" (mouseover)="console(jsonImages[randomIndex].author)" (mouseout)="changeRandom()" /></p>
+
+<p [ngStyle]="{'color':valColor}" (click)="valColor='green';">Lorem Ipsum do u wanna eat it! Le lorem ipsum est, en imprimerie, une dose. </p>
+
+<!-- --------------------NG STYLE------------------- -->
+
+<p [ngStyle]="varObjet">Lorem Ipsum do u wanna eat it! Le lorem ipsum est, en imprimerie, une dose. </p>
+
+<!--NG CLASS-->
+<div class="row mt-3">
+
+    <h3>Dynamic Class Using [ngClass]</h3>
+
+    <button (click)="textPrimary=!textPrimary">CHANGE THE PARAGRAPHE CLASS</button>
+
+    <p [ngClass]="{'text-primary': textPrimary}" (click)="textPrimary=!textPrimary">Lorem Ipsum do u wanna eat it! Le lorem ipsum est, en imprimerie, une dose. </p>
+
+</div>
+
+<!-- -----------------------NG IF-------------------- -->
+<div class="row mt-3">
+
+    <h3>Dynamic display *ngIf</h3>
+
+    <button (click)="displayParag=!displayParag">CHANGE THE PARAGRAPHE CONDITION</button>
+
+    <p *ngIf="displayParag; else otherParag">Lorem Ipsum do u wanna eat it! Le lorem ipsum est, en imprimerie, une dose. </p>
+
+
+    <ng-template #otherParag>
+        <p>Ceci est un autre paragraphe!</p>
+    </ng-template>
+
+</div>
+
+<!-- ---------------------NG SWITCH-------------------- -->
+<div class="row mt-3">
+
+    <h3>Dynamic display [ngSwitch] *ngSwitchCase</h3>
+
+    <button class="btn-primary" (click)="inSwitch()">click to Switch</button>
+
+    <div [ngSwitch]="displaySwitch">
+        <p *ngSwitchCase="1">PARAG 1</p>
+        <p *ngSwitchCase="2">PARAG 2</p>
+        <p *ngSwitchCase="3">PARAG 3</p>
+    </div>
+
+
+
+</div>
+
+<!-- ----------------------NG FOR ----------------------------->
+<div class="row mt-3">
+
+    <h3>Dynamic display *ngFor</h3>
+
+    <ul>
+        <li *ngFor="let line of arrayImages">Ligne for {{line}} <br> <img [src]="'./assets/images/'+line" width="500">
+        </li>
+
+    </ul>
+
+</div>
+<!-- ----------bbbbbbbbbbbbbbNG FOR JSON------------------------------>
+
+<div class="row mt-3">
+
+    <h3>Dynamic display *ngFor on Json data</h3>
+
+    <ul>
+        <li class="col" *ngFor="let img of jsonImages">Line for {{img.title}} <br> <img [src]="'./assets/images/' + img.url" width="500"><br>
+            <span>{{img.author}}</span>
+        </li>
+
+    </ul>
+
+</div>

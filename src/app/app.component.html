@@ -1,0 +1,18 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+
+<h1>My Angular Project</h1>
+<!-- on doit entourer les propriétés avec deux accolades-->
+
+<h2>{{title}}</h2>
+<!-- on doit utiliser l'attribut (click) entre parenthèses-->
+
+
+<button (click)="alert()">Click Me{{nb}}</button>
+
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+</div>
+
+
+<app-footer></app-footer>
