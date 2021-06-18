@@ -1,0 +1,27 @@
+<p>details works!</p>
+
+<h1>{{idPhoto}}</h1>
+
+<div class="row justify-content-center">
+
+    <div class="card col-12" style="width: 18rem;">
+        <img class="card-img-top" [src]="infoPhoto?.download_url" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"> This image got ID {{idPhoto}}</h5>
+            <h6>{{infoPhoto?.author}}</h6>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">width:{{infoPhoto?.width}}</li>
+                <li class="list-group-item">Height:{{infoPhoto?.width}}</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+            <button class="btn btn-primary" (click)="goBackToGallery()">BACK TO GALLERY</button>
+
+
+            <!--<a routerLink="/about/" class="btn btn-primary">Go somewhere</a>-->
+        </div>
+    </div>
+</div>

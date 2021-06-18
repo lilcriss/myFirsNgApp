@@ -1,1 +1,47 @@
-<p>contact works!</p>
+<p>CONTACT WORKS!</p>
+
+<div class="row mt-3">
+
+    <!-- <form>
+
+        <input type="text" name="myVar" [(ngModel)]="myVar" />
+
+    </form> -->
+
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+
+        <div class="form-group">
+
+            <label for="firstname" class="form-label">Firstname*</label>
+            <input type="text" [(ngModel)]="firstname" name="firstname" class="form-control" id="firstname" placeholder="Enter firstname" required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="lastname" class="form-label">Lastname*</label>
+            <input type="text" [(ngModel)]="lastname" name="lastname" class="form-control" id="lastname" placeholder="Enter lastname" required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="email" class="form-label">Email*</label>
+            <input type="text" [(ngModel)]="email" name="email" class="form-control" id="email" placeholder=" Enter email" required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="message" class="form-label">Message</label>
+            <input type="text" [(ngModel)]="message" name="message" class="form-control" id="message" placeholder="Enter message">
+
+        </div>
+
+
+
+        <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
+    </form>
+
+    <p>{{myVar}}</p>
+</div>
